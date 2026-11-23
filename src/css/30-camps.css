@@ -1,0 +1,67 @@
+/* After-school program, summer camps and events pages. */
+
+/* a season laid out week by week: when, what, and where the field trip goes */
+.weeks { list-style: none; margin: clamp(28px, 4vw, 48px) 0 0; padding: 0; border-bottom: 1.5px solid var(--ink); }
+.week {
+  display: grid; grid-template-columns: 13.5rem minmax(0, 1fr) minmax(0, 13rem);
+  gap: 10px clamp(20px, 4vw, 56px); align-items: start;
+  padding: 28px 0 30px; border-top: 1.5px solid var(--ink);
+}
+.week__when { position: relative; margin: 0; padding-left: 36px; font-size: 1.1875rem; font-weight: 800; font-stretch: 108%; line-height: 1.25; white-space: nowrap; }
+.week__when .tape { position: absolute; left: 0; top: -8px; width: 20px; height: 46px; }
+.week h3 { font-size: clamp(1.4rem, 2.2vw, 1.75rem); font-stretch: 114%; }
+.week__tag { margin: 8px 0 10px; font-weight: 600; max-width: 34em; }
+.week__body > p:not(.week__tag) { color: var(--ink-soft); max-width: 40em; }
+.week__trip { margin: 0; padding: 12px 14px 12px 20px; background: var(--gi); border-radius: var(--radius); box-shadow: inset 5px 0 0 var(--gold); font-weight: 700; line-height: 1.3; }
+.week__trip span { display: block; margin-bottom: 2px; font-size: .875rem; font-weight: 600; color: var(--ink-soft); }
+@media (max-width: 960px) {
+  .week { grid-template-columns: 13.5rem minmax(0, 1fr); }
+  .week__trip { grid-column: 2; justify-self: start; }
+}
+@media (max-width: 700px) {
+  .week { grid-template-columns: minmax(0, 1fr); gap: 14px; }
+  .week__when { padding-left: 32px; }
+  .week__when .tape { top: -3px; height: 30px; }
+  .week__trip { grid-column: 1; }
+}
+
+/* numbered how-to lists set in .cols */
+.cols--steps ol { margin: 0; padding-left: 1.3em; }
+.cols--steps li + li { margin-top: .4em; }
+.cols--steps h3 + p { margin-bottom: .6em; }
+
+/* longer policies inside a question list: small headings and nested lists */
+.faq--policies details h3 { font-size: 1.0625rem; font-stretch: 106%; margin: 4px 0 8px; }
+.faq--policies details li > ul { margin: .35em 0 0; }
+.faq--policies details ul + h3, .faq--policies details p + h3 { margin-top: 0; }
+
+/* a button with a line of small print under it */
+.act-note { margin: 14px 0 0; font-size: .9375rem; color: var(--ink-soft); max-width: 34em; }
+.section--emerald .act-note { color: #DCE8DE; }
+
+/* dated list of posts */
+.data--news tbody th { width: 9.5rem; white-space: nowrap; font-weight: 600; font-stretch: 100%; color: var(--ink-soft); }
+.data--news td a { font-weight: 600; }
+@media (max-width: 560px) {
+  .data--news tr { display: grid; }
+  .data--news tbody th { width: auto; padding-bottom: 0; }
+  .data--news tbody td { border-top: 0; padding-top: 2px; }
+  .data--news tbody tr:last-child th { border-bottom: 0; }
+}
+
+/* spacing between blocks that the shared rules don't already cover */
+.gap-s { margin-top: 16px; }
+.gap-m { margin-top: clamp(28px, 4vw, 44px); }
+.gap-l { margin-top: clamp(40px, 6vw, 64px); }
+.split__body > .times + .ticks { margin-top: 26px; }
+.callout--narrow { max-width: 46rem; }
+.cols--sessions p + p { margin-top: .5em; }
+.cols--sessions strong { color: var(--ink); }
+.split__body > .tablewrap + .ticks { margin-top: 26px; }
+.data--rates thead th { white-space: normal; vertical-align: bottom; }
+.callout ul.callout__list { margin: 0 0 1em; padding-left: 1.2em; }
+.callout__list li + li { margin-top: .3em; }
+.numlist { margin: 16px 0 0; padding-left: 1.3em; }
+.numlist li + li { margin-top: .45em; }
+.numlist + .note-small { margin-top: 14px; }
+.split__body > .tablewrap + .note-small { margin-top: 12px; }

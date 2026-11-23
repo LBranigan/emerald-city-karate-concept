@@ -1,0 +1,64 @@
+/* Program pages (Little Dragons, Teens & Adults, Family) and the small
+   campaign pages (buddy pass, Confidence Toolbox, car show, Seafair parade). */
+
+/* a checklist that runs in two columns on wide screens */
+.ticks--cols { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px clamp(28px, 5vw, 72px); }
+.ticks--cols li + li { margin-top: 0; }
+@media (max-width: 760px) { .ticks--cols { grid-template-columns: minmax(0, 1fr); } }
+
+/* one wide photo across the content column */
+.widephoto { margin: clamp(32px, 5vw, 56px) 0 0; }
+.widephoto img { width: 100%; aspect-ratio: 5 / 2; object-fit: cover; border-radius: var(--radius); }
+.widephoto figcaption { margin-top: 8px; font-size: .9375rem; color: var(--ink-soft); }
+@media (max-width: 600px) { .widephoto img { aspect-ratio: 3 / 2; } }
+
+/* hero crops for originals that are much wider than the frame */
+.page-teens-adults .pagehero__photo img { object-position: 41% 50%; }
+.page-family .pagehero__photo img { aspect-ratio: 3 / 2; object-position: 55% 50%; }
+.page-teens-adults .split__photo--wide img { object-position: 78% 50%; }
+.split__body > .lede + .quote--lead { margin-top: 28px; }
+
+/* the nine life skills: three across, so they read as a set */
+.skills { margin-top: clamp(40px, 6vw, 64px); }
+.skills h3 { font-size: 1.1875rem; }
+
+/* a large quotation standing beside a block of text */
+.split__body > .quote--lead:first-child { margin-top: 0; }
+.quote--plain blockquote p { text-indent: 0; }
+
+/* where one of the dojo's Zen Planner forms would load on the live site */
+.formslot { max-width: 36rem; }
+.formslot .payframe { margin-top: 20px; }
+.formslot .payframe__fields { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.formslot__real { margin: 14px 0 0; font-size: 1rem; }
+
+/* two next steps side by side, each with its own action */
+.options { list-style: none; margin: clamp(28px, 4vw, 44px) 0 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(16px, 2.4vw, 28px); }
+.options > li { display: grid; align-content: start; gap: 10px; padding: 22px 22px 24px 30px; background: var(--gi); color: var(--ink); border: 1.5px solid var(--sage-line); border-radius: var(--radius); box-shadow: inset 8px 0 0 var(--gold); }
+.options h3 { font-size: 1.375rem; }
+.options p { margin: 0; color: var(--ink-soft); }
+.options .btn, .options .options__link { justify-self: start; margin-top: 6px; }
+@media (max-width: 700px) { .options { grid-template-columns: minmax(0, 1fr); } }
+
+/* closing band written by hand on pages that switch the standard one off */
+.closing__in { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(28px, 5vw, 72px); align-items: center; }
+.closing h2 { font-size: clamp(2rem, 4.4vw, 3.4rem); font-stretch: 120%; line-height: 1.02; }
+.closing .lede { margin-top: 18px; }
+.closing .ticks { margin-top: 0; }
+.closing__act { margin-top: 26px; }
+.closing__act p { margin: 14px 0 0; font-size: 1rem; color: #DCE8DE; }
+@media (max-width: 860px) { .closing__in { grid-template-columns: minmax(0, 1fr); } }
+
+/* four short facts in a row */
+.facts--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: clamp(28px, 4vw, 44px); }
+@media (max-width: 900px) { .facts--4 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 480px) { .facts--4 { grid-template-columns: minmax(0, 1fr); } }
+.split__body > .times + .times { margin-top: 26px; }
+.split__body > .quote + .callout { margin-top: 32px; }
+.split__body > .note-small + .callout { margin-top: 26px; }
+.split__body > .quote + .quote { border-top: 1.5px solid var(--ink); padding-top: 24px; }
+
+/* single short times stay on one line on phones (the shared 480px rule lets long time lists wrap) */
+@media (max-width: 480px) {
+  .page-little-dragons .times td, .page-teens-adults .times td, .page-family .times td { white-space: nowrap; }
+}

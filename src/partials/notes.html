@@ -1,0 +1,66 @@
+  <!-- Prototype notes: what this mockup is and how it plugs into Zen Planner -->
+  <dialog class="notes" id="notes" aria-labelledby="notes-title">
+    <div class="notes__in">
+      <div class="booking__titlebar">
+        <h2 id="notes-title">Prototype notes</h2>
+        <button type="button" class="booking__close" data-notes-close aria-label="Close notes">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+
+      <p>This is a concept redesign of emeraldcitykarate.com, made for the dojo to look at. The words, photos and logo are the dojo’s own, reorganized and rewritten for clarity. It is not connected to the live site or to Zen Planner.</p>
+
+      <h3>How sign-up plugs into Zen Planner</h3>
+      <p>The live site sends everyone to one Zen Planner list and asks them to find the right red button. Here, every “Start your trial” button works out the right membership from the student’s age and links straight to it.</p>
+      <table class="notes__table">
+        <thead><tr><th>Choice here</th><th>Zen Planner membership</th></tr></thead>
+        <tbody>
+          <tr><td>Ages 4 to 6</td><td><a href="https://emeraldcitykarate.sites.zenplanner.com/registration.cfm?payment=MEMBERSHIP&amp;MembershipTemplateId=EFB2BBB3-B70D-4E5A-BB3D-D2C3D8412E67" target="_blank" rel="noopener">Two Week Trial (Ages 4 to 6)</a>, $29.99</td></tr>
+          <tr><td>Ages 7 to 11, and 12 and up</td><td><a href="https://emeraldcitykarate.sites.zenplanner.com/registration.cfm?payment=MEMBERSHIP&amp;MembershipTemplateId=B2494C83-88AF-4D23-8691-B3865064F02E" target="_blank" rel="noopener">Two Week Trial (Youth &amp; Adult) 7 Years &amp; Older</a>, $29.99</td></tr>
+          <tr><td>Reserve more classes</td><td><a href="https://emeraldcitykarate.sites.zenplanner.com/calendar.cfm" target="_blank" rel="noopener">calendar.cfm</a></td></tr>
+          <tr><td>Member login</td><td><a href="https://emeraldcitykarate.sites.zenplanner.com/login.cfm" target="_blank" rel="noopener">login.cfm</a></td></tr>
+        </tbody>
+      </table>
+
+      <h3>What is real and what is simulated</h3>
+      <ul>
+        <li><strong>Real:</strong> class times (from the July 2026 schedule sheet), holiday closures and Thanksgiving-week changes, the Little Dragons open-spot counts (read from the Zen Planner calendar on November 23, 2026), prices, policies and every link to Zen Planner and the dojo’s forms.</li>
+        <li><strong>Simulated:</strong> the details, waiver and payment steps of the sign-up. Zen Planner’s own flow is Personal info, Waivers, Payment, Agreements, Confirmation. Nothing typed here is sent anywhere.</li>
+        <li><strong>Launch option A, no new accounts:</strong> keep steps 1 and 2 here, then open the matching Zen Planner registration link for details, waiver and payment.</li>
+        <li><strong>Launch option B, fully on-page:</strong> needs Zen Planner API access or its embeddable widgets for the form and card fields. Worth asking their support what the dojo’s plan includes.</li>
+      </ul>
+
+      <h3>Where each page of the live site went</h3>
+      <table class="notes__table">
+        <thead><tr><th>Live site</th><th>Here</th></tr></thead>
+        <tbody>
+          <tr><td>Home, How to start</td><td><a href="index.html">Home</a> (sign-up starts in the first screen)</td></tr>
+          <tr><td>Kids, Youth, Teen &amp; adult, Family</td><td><a href="little-dragons.html">Little Dragons</a>, <a href="youth.html">Youth</a>, <a href="teens-adults.html">Teens &amp; Adults</a>, <a href="family.html">Family</a></td></tr>
+          <tr><td>After school, Summer camp 2026</td><td><a href="after-school.html">After-school program</a>, <a href="summer-camp.html">Summer camps</a></td></tr>
+          <tr><td>Schedule</td><td><a href="schedule.html">Schedule</a>, with a class finder</td></tr>
+          <tr><td>About, Instructors, Community support</td><td><a href="about.html">Our dojo</a>, <a href="instructors.html">Instructors</a>, <a href="community.html">Community</a></td></tr>
+          <tr><td>Karate history and its four sub-pages, book translation</td><td><a href="history.html">Karate history</a>, <a href="shudokan.html">Shudokan</a>, <a href="toyama-kanken.html">Toyama Kanken</a>, <a href="walter-todd.html">Walter Todd</a>, <a href="tanaka-mikio.html">Tanaka Mikio</a>, <a href="toyama-book.html">the book</a></td></tr>
+          <tr><td>Roots (English and Japanese), About in Japanese</td><td><a href="roots.html">Roots Dojo</a>, <a href="roots-ja.html" lang="ja">ルーツ空手道場</a>, <a href="about-ja.html" lang="ja">日本語</a></td></tr>
+          <tr><td>Active students, Member login</td><td><a href="students.html">Student hub</a></td></tr>
+          <tr><td>News &amp; events</td><td><a href="events.html">Events</a> (the 100 or so news posts from 2018 to 2024 are linked, not rebuilt)</td></tr>
+          <tr><td>FAQ, Policies, Privacy policy, Contact</td><td><a href="faq.html">Questions</a>, <a href="policies.html">Policies</a>, <a href="privacy.html">Privacy</a>, <a href="contact.html">Contact</a></td></tr>
+          <tr><td>Buddy pass, Confidence Toolbox</td><td><a href="buddy-pass.html">Bring a buddy</a>, <a href="confidence-toolbox.html">Confidence Toolbox</a></td></tr>
+          <tr><td>Car show and Seafair parade landing pages</td><td><a href="car-show.html">Car show</a>, <a href="seafair-parade.html">Seafair parade</a> (not in the menus, as on the live site)</td></tr>
+        </tbody>
+      </table>
+
+      <h3>To confirm with the dojo</h3>
+      <ul data-confirm-list>
+        <li>The schedule page lists Little Dragons at 4:15 PM on Monday and Wednesday, and a Tuesday weapons class; the July 2026 schedule sheet and Zen Planner show 5:00 PM and monthly Friday seminars. This mockup follows the schedule sheet.</li>
+        <li>Zen Planner’s trial page sends people to bookwhen.com to reserve classes; the website says to use Zen Planner’s calendar.</li>
+        <li>Teens &amp; Adults is “12 and older” in most places but “13 and older” in the sign-up instructions.</li>
+        <li>The address is 8314 Greenwood Ave N in most places and 8312 on the contact page and on the embedded map’s pin. Two different email addresses are also in use.</li>
+        <li>The newest post on the news page is from July 2024, and the snow-day policy sends people to that page for closure news.</li>
+        <li>Summer camp shows the 2026 season, which has finished; nothing for 2027 is posted yet. The camp page also uses a third email address for the waitlist and absences.</li>
+        <li>After-school: the schedule is headed “2025-2026” over 2026–27 dates, belt tests are described as both each trimester and each quarter, and the paper registration form button has no file behind it.</li>
+        <li>Parents’ Night Out: the late pick-up fee starts at 8:30 PM in one place and pick-up is “by 8:45 PM” in another, and no upcoming date is listed.</li>
+        <li>Hanshi Morris Mack is “10th Dan” on the About page and “ninth degree” on the Instructors page. Both pages here leave the number off.</li>
+        <li>No opening hours appear anywhere on the live site, so the contact page here points to the schedule.</li>
+      </ul>
+    </div>
+  </dialog>

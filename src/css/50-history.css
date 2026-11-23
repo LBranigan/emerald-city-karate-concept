@@ -1,0 +1,126 @@
+/* History series, Roots Dojo and the Japanese-language pages: long reading pages. */
+
+/* On phones the list of chapters follows the text instead of pushing it down. */
+@media (max-width: 860px) {
+  .article--series .article__aside { order: 2; margin-top: 8px; }
+}
+
+/* Reading pages run a little larger and looser than the rest of the site. */
+.prose--read { font-size: 1.1875rem; line-height: 1.65; }
+.prose--read .lede { font-size: clamp(1.25rem, 1.9vw, 1.4375rem); line-height: 1.5; font-weight: 500; }
+.prose--read p { margin-bottom: 1.15em; }
+.prose a { overflow-wrap: anywhere; }
+.prose .source { margin-top: 2em; padding-top: 16px; border-top: 1.5px solid var(--sage-line); font-size: 1rem; color: var(--ink-soft); }
+
+/* Old photographs are small: show them at their own size, never stretched. */
+.prose figure.prose__portrait img { width: auto; max-width: 100%; }
+.prose figure.prose__portrait--frame img { border: 6px solid var(--gi); box-shadow: 0 1px 0 var(--sage-line), 0 14px 28px -18px rgba(4, 38, 29, .5); }
+.prose figure.chart { clear: both; text-align: center; }
+.prose figure.chart img { width: auto; max-width: 100%; margin-inline: auto; background: #fff; border: 1.5px solid var(--sage-line); border-radius: var(--radius); }
+.prose figure.chart figcaption { text-align: left; }
+.prose h2, .prose h3 { clear: both; }
+.prose h2.flow-on, .prose h3.flow-on { clear: none; }
+
+.prose ul.ticks { margin: 20px 0 1.4em; padding-left: 0; }
+.prose ul.ticks li + li { margin-top: 12px; }
+
+/* Language switch in the hero */
+.langlink { margin: 22px 0 0; font-size: 1rem; font-weight: 600; }
+
+/* Facts beside the text: when, how much, who to contact */
+.asidefacts { margin: 0; border-bottom: 1.5px solid var(--ink); }
+.asidefacts > div { padding: 12px 0; border-top: 1.5px solid var(--ink); }
+.asidefacts dt { font-size: .9375rem; color: var(--ink-soft); }
+.asidefacts dd { margin: 2px 0 0; font-weight: 700; font-stretch: 104%; overflow-wrap: anywhere; }
+.asidefacts dd span { display: block; font-weight: 400; font-stretch: 100%; font-size: .9375rem; color: var(--ink-soft); }
+.asidefacts dd a { font-weight: 600; font-size: .9375rem; }
+.article__aside .asidefacts + p { margin-top: 16px; font-size: 1rem; }
+.article__aside p + p { margin-top: 6px; }
+
+/* The line of teachers, oldest first: a strip of belt with one stripe per teacher */
+.prose .lineage { list-style: none; margin: 1.6em 0 2em; padding: 0; }
+.lineage li { position: relative; padding: 0 0 22px 46px; }
+.lineage li::before {
+  content: ""; position: absolute; left: 6px; top: 0; bottom: 0; width: 20px;
+  background-color: #FCFCF8; background-image: var(--stitch); background-size: 10px 8px;
+  box-shadow: 1px 0 0 rgba(12, 32, 25, .18), -1px 0 0 rgba(12, 32, 25, .1);
+}
+.lineage li::after {
+  content: ""; position: absolute; left: 0; top: 4px; width: 32px; height: 16px;
+  background-color: var(--tape, var(--t-gold));
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, .34), rgba(255, 255, 255, 0) 32%, rgba(0, 0, 0, .14));
+  box-shadow: 0 1px 2px rgba(12, 32, 25, .35);
+}
+.lineage li:last-child { padding-bottom: 0; }
+.lineage li:last-child::before { bottom: auto; height: 30px; }
+.lineage li + li { margin-top: 0; }
+.lineage b { display: block; font-size: 1.1875rem; font-weight: 800; font-stretch: 110%; line-height: 1.25; }
+.lineage b small { font-size: .9375rem; font-weight: 500; font-stretch: 100%; color: var(--ink-soft); margin-left: 6px; }
+.lineage span { display: block; margin-top: 2px; font-size: 1rem; line-height: 1.5; color: var(--ink-soft); }
+
+/* Introductions to each chapter on the hub page */
+.prose .chapterlist { list-style: none; margin: 1.2em 0 0; padding: 0; }
+.prose .chapterlist + .pager { margin-top: 0; }
+.chapterlist li { border-top: 1.5px solid var(--ink); padding: 18px 0 20px; }
+.chapterlist li + li { margin-top: 0; }
+.chapterlist h3 { margin: 0 0 6px; font-size: 1.375rem; clear: none; }
+.chapterlist h3 small { font-size: 1rem; font-weight: 500; font-stretch: 100%; color: var(--ink-soft); margin-left: 6px; white-space: nowrap; }
+.chapterlist p { margin: 0 0 8px; color: var(--ink-soft); }
+.chapterlist a { font-weight: 600; }
+
+/* Numbered reasons (the source numbers them 1 to 8) */
+.prose .reasons { list-style: none; margin: 1.2em 0 0; padding: 0; counter-reset: reason; border-bottom: 1.5px solid var(--ink); }
+.reasons li { counter-increment: reason; display: grid; grid-template-columns: 2.6rem minmax(0, 1fr); gap: 0 8px; padding: 16px 0 18px; border-top: 1.5px solid var(--ink); }
+.reasons li + li { margin-top: 0; }
+.reasons li::before { content: counter(reason); font-size: 1.75rem; font-weight: 800; font-stretch: 116%; line-height: 1.1; color: var(--emerald); font-family: var(--font); }
+.reasons h3 { margin: 0 0 4px; font-size: 1.25rem; clear: none; }
+.reasons p { margin: 0; color: var(--ink-soft); }
+.reasons li > * { grid-column: 2; }
+.reasons li::before { grid-column: 1; grid-row: 1 / span 2; }
+
+/* Programs on the Roots pages */
+.prose .twolists { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 32px; margin: .2em 0 1em; }
+.prose .twolists h4 { margin-top: .8em; }
+@media (max-width: 560px) { .prose .twolists { grid-template-columns: minmax(0, 1fr); } }
+.prose .price { font-size: 1.5rem; font-weight: 800; font-stretch: 110%; margin: 0 0 .4em; }
+.prose .price small { font-size: 1rem; font-weight: 500; font-stretch: 100%; color: var(--ink-soft); }
+.prose .data { margin-bottom: 1em; }
+.prose .data td span { display: block; font-size: .9375rem; color: var(--ink-soft); }
+
+/* Closing contact band for Roots Dojo (the Seattle trial does not apply there) */
+.rootscta__in { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(28px, 5vw, 72px); align-items: center; }
+.rootscta h2 { font-size: clamp(2rem, 4.4vw, 3.5rem); font-stretch: 122%; line-height: 1.02; }
+.rootscta .lede { margin-top: 18px; }
+.rootscta__act { display: grid; gap: 10px; justify-items: start; }
+.rootscta__act p { margin: 6px 0 0; font-size: 1rem; color: #DCE8DE; }
+@media (max-width: 860px) { .rootscta__in { grid-template-columns: minmax(0, 1fr); } }
+
+/* Japanese text: looser leading, no forced balance, breaks allowed anywhere sensible */
+html:lang(ja) .prose { line-height: 1.9; line-break: strict; overflow-wrap: anywhere; }
+html:lang(ja) .prose h2 { font-size: clamp(1.45rem, 2.5vw, 1.9rem); font-weight: 700; line-height: 1.4; }
+html:lang(ja) .prose h3 { font-size: 1.25rem; font-weight: 700; line-height: 1.5; }
+html:lang(ja) .prose h4 { font-size: 1.0625rem; font-weight: 700; }
+html:lang(ja) .pagehero__lede { line-height: 1.75; }
+html:lang(ja) .reasons h3 { font-size: 1.1875rem; }
+html:lang(ja) .asidefacts dd { font-stretch: 100%; }
+.rootscta:lang(ja) h2 { font-size: clamp(1.7rem, 3.6vw, 2.6rem); line-height: 1.3; letter-spacing: 0; }
+.bio-lines { margin: 0 0 1.15em; padding: 0; list-style: none; }
+.prose .bio-lines li + li { margin-top: .5em; }
+
+/* On Japanese pages the header, footer, banner and dialogs stay in English, so they keep the site typeface. */
+html:lang(ja) :is(.skip, .concept, .site-header, .site-footer, .cta-band, .sticky-cta, dialog),
+html:lang(ja) :is(.skip, .concept, .site-header, .site-footer, .cta-band, .sticky-cta, dialog) * { font-family: var(--font); }
+html:lang(ja) :is(.site-header, .site-footer, .cta-band, .sticky-cta, dialog) { line-height: 1.55; }
+
+.rootscta__act .btn { overflow-wrap: anywhere; }
+html:lang(ja) body.page-about-ja .pagehero h1 { font-size: clamp(1.55rem, 3.4vw, 2.6rem); }
+
+/* ...and their width-axis styling, which the site-wide Japanese rule would otherwise flatten. */
+html:lang(ja) .brand__name { font-stretch: 114%; }
+html:lang(ja) .btn { font-stretch: 106%; }
+html:lang(ja) .menu__panel b { font-stretch: 106%; }
+html:lang(ja) .site-footer__nav h2 { font-stretch: 108%; }
+html:lang(ja) .sticky-cta__text b { font-stretch: 110%; }
+html:lang(ja) .cta-band h2 { text-wrap: balance; }
+html:lang(ja) dialog h2 { font-stretch: 117%; }
+html:lang(ja) dialog h3 { font-stretch: 110%; }

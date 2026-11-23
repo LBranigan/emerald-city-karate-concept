@@ -1,0 +1,89 @@
+/* About, instructors, community, contact, questions, policies and student hub:
+   the few pieces those pages need beyond the shared building blocks. */
+
+/* wide group photos keep more of their width in the hero */
+.pagehero__photo--wide img { aspect-ratio: 16 / 10; }
+
+/* a founder's biography: two small photos stacked beside the text */
+.bio { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: clamp(32px, 6vw, 88px); align-items: start; }
+.bio__photos { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; position: sticky; top: 100px; }
+.bio__photos figure { margin: 0; }
+.bio__photos img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 20%; border-radius: var(--radius); }
+.bio__photos figure:first-child { grid-column: 1 / -1; }
+.bio__photos figure:first-child img { aspect-ratio: 5 / 4; object-position: 50% 12%; }
+.bio__photos .bio__inset { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); gap: 16px; align-items: end; }
+.bio__inset figcaption { margin: 0; padding-bottom: 4px; }
+.bio__photos figcaption { margin-top: 8px; font-size: .9375rem; line-height: 1.4; color: var(--ink-soft); }
+.bio__body .lede { margin: 18px 0 16px; font-weight: 500; }
+@media (max-width: 860px) {
+  .bio { grid-template-columns: minmax(0, 1fr); }
+  .bio__photos { position: static; max-width: 30rem; }
+}
+
+/* Japanese proverbs used in the mat chats */
+.proverbs { list-style: none; margin: clamp(28px, 4vw, 44px) 0 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(20px, 3vw, 40px); }
+.proverb { padding: 22px 24px 24px 30px; background: var(--gi); border-radius: var(--radius); box-shadow: inset 8px 0 0 var(--sun); }
+.proverb__ja:lang(ja) { display: block; font-family: "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", "Noto Serif JP", serif; font-size: clamp(1.75rem, 3.4vw, 2.5rem); line-height: 1.25; color: var(--ink); }
+.proverb__ro { display: block; margin-top: 10px; font-size: .9375rem; font-weight: 600; color: var(--emerald); }
+.proverb__en { display: block; margin-top: 2px; font-size: 1.25rem; font-weight: 700; font-stretch: 106%; line-height: 1.25; }
+@media (max-width: 700px) { .proverbs { grid-template-columns: minmax(0, 1fr); } }
+
+/* the team grid: portraits are small, so let five sit across a wide screen */
+.people--team { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.people--team .person img { object-position: 50% 15%; }
+@media (max-width: 1020px) { .people--team { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+@media (max-width: 800px) { .people--team { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 520px) { .people--team { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px 16px; } }
+.section__head + .people__group { margin-top: clamp(32px, 5vw, 52px); }
+.people__group + .people__group { margin-top: clamp(40px, 6vw, 64px); }
+.quote--ruled { border-top: 1.5px solid var(--ink); padding-top: 16px; }
+.people__group > h3 { padding-bottom: 12px; border-bottom: 1.5px solid var(--ink); }
+.people__group > .people { margin-top: 24px; }
+
+/* contact details and a map */
+.contact { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(32px, 6vw, 88px); align-items: stretch; }
+.contact__list { margin: 28px 0 0; border-bottom: 1.5px solid var(--ink); }
+.contact__list address { font-style: normal; }
+.contact__list .covers__row { grid-template-columns: minmax(0, 8rem) 1fr; }
+.contact__list dd { color: var(--ink); overflow-wrap: anywhere; }
+.contact__list dd span { display: block; margin-top: 4px; font-size: .9375rem; color: var(--ink-soft); }
+.contact__act { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.mapbox { position: relative; display: grid; place-items: center; min-height: 420px; border-radius: 6px; overflow: hidden; background: var(--emerald-deep); color: var(--mat); }
+.mapbox p { margin: 0; padding: 24px; text-align: center; }
+.mapbox a { color: var(--mat); }
+.mapbox iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; display: block; filter: grayscale(1) contrast(1.05); }
+@media (max-width: 860px) {
+  .contact { grid-template-columns: minmax(0, 1fr); }
+  .mapbox { min-height: 320px; }
+  .contact__list .covers__row { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* a map or diagram that should be read at full size */
+.diagram { margin: 0; }
+.diagram img { width: 100%; border: 1.5px solid var(--ink); border-radius: var(--radius); }
+.diagram figcaption { margin-top: 8px; font-size: .9375rem; color: var(--ink-soft); }
+
+/* page section list beside question and policy pages: keep the long lists readable */
+.article--wide { grid-template-columns: minmax(0, 15rem) minmax(0, 50rem); }
+@media (max-width: 860px) {
+  .article--wide { grid-template-columns: minmax(0, 1fr); }
+  .article--wide .chapters { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 20px; }
+}
+@media (max-width: 480px) { .article--wide .chapters { grid-template-columns: minmax(0, 1fr); } }
+
+/* student hub: what a stripe tests, in Japanese and English */
+.step__term { display: block; margin-top: 4px; font-size: .9375rem; font-weight: 600; color: var(--emerald); }
+.hub-links { margin-top: 0; }
+.signposts { display: flex; flex-wrap: wrap; gap: 10px 12px; margin: 26px 0 0; padding: 0; list-style: none; }
+.signposts a { display: inline-block; padding: 8px 14px; border: 1.5px solid rgba(255, 255, 255, .55); border-radius: var(--radius); color: var(--mat); font-size: 1rem; font-weight: 600; text-decoration: none; }
+.signposts a:hover { background: var(--mat); color: var(--ink); border-color: var(--mat); }
+
+/* spacing between blocks these pages put next to each other */
+.article__aside .note-small { margin-top: 20px; overflow-wrap: anywhere; }
+.cols + .callout { margin-top: clamp(32px, 5vw, 52px); }
+.split__body > p + .callout { margin-top: 24px; }
+.callout .videos { margin-top: 14px; }
+.path + .cols { margin-top: clamp(36px, 5vw, 56px); }
+.program__act > span { font-size: 1rem; }
+.cols li ul { list-style: disc; }
+.cols li ul li + li { margin-top: .3em; }

@@ -1,0 +1,203 @@
+  <!-- Sign-up flow -->
+  <dialog class="booking" id="booking" aria-labelledby="booking-title">
+    <form class="booking__form" novalidate data-booking-form>
+      <header class="booking__head">
+        <div class="booking__titlebar">
+          <h2 id="booking-title">Start your two-week trial <span class="demo-tag">Demo</span></h2>
+          <button type="button" class="booking__close" data-close aria-label="Close sign-up">
+            <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+          </button>
+        </div>
+        <ol class="beltbar" data-beltbar aria-label="Sign-up progress">
+          <li class="beltbar__step" data-bar="1"><span class="tape tape--gold" aria-hidden="true"></span><span class="beltbar__label">Who</span></li>
+          <li class="beltbar__step" data-bar="2"><span class="tape tape--orange" aria-hidden="true"></span><span class="beltbar__label">First class</span></li>
+          <li class="beltbar__step" data-bar="3"><span class="tape tape--blue" aria-hidden="true"></span><span class="beltbar__label">Details</span></li>
+          <li class="beltbar__step" data-bar="4"><span class="tape tape--purple" aria-hidden="true"></span><span class="beltbar__label">Pay</span></li>
+        </ol>
+      </header>
+
+      <div class="booking__body" data-booking-body tabindex="-1">
+
+        <!-- Step 1 -->
+        <section class="bstep" data-step="1" aria-labelledby="bs1-h">
+          <h3 id="bs1-h" tabindex="-1">Who is starting?</h3>
+          <p class="bstep__lede">We’ll match them to the right class. More than one of you? Sign up the first person, then add the next in a few taps.</p>
+          <div class="choices" role="radiogroup" aria-labelledby="bs1-h">
+            <label class="choice">
+              <input type="radio" name="program" value="dragons">
+              <span class="choice__main"><b>A child aged 4 to 6</b><span>Little Dragons, 30-minute classes</span></span>
+              <span class="choice__meta" data-next="dragons"></span>
+            </label>
+            <label class="choice">
+              <input type="radio" name="program" value="beginners">
+              <span class="choice__main"><b>A child aged 7 to 11</b><span>Beginners, 30-minute classes. Parents can train too.</span></span>
+              <span class="choice__meta" data-next="beginners"></span>
+            </label>
+            <label class="choice">
+              <input type="radio" name="program" value="adults">
+              <span class="choice__main"><b>A teen or adult, 12 and up</b><span>Teens &amp; Adults, 50-minute classes</span></span>
+              <span class="choice__meta" data-next="adults"></span>
+            </label>
+          </div>
+          <p class="err" data-err="program" role="alert" hidden>Choose who is starting so we can show the right class times.</p>
+        </section>
+
+        <!-- Step 2 -->
+        <section class="bstep" data-step="2" aria-labelledby="bs2-h" hidden>
+          <h3 id="bs2-h" tabindex="-1">Choose a first class</h3>
+          <p class="bstep__lede"><span data-program-name>Beginners</span> classes for new students. Your two weeks start on the day of your first class.</p>
+          <div class="slots" data-slots></div>
+          <label class="check check--later">
+            <input type="checkbox" name="later">
+            <span>I’ll pick my first class later</span>
+          </label>
+          <p class="err" data-err="slot" role="alert" hidden>Choose a first class, or tick the box to pick one later.</p>
+        </section>
+
+        <!-- Step 3 -->
+        <section class="bstep" data-step="3" aria-labelledby="bs3-h" hidden>
+          <h3 id="bs3-h" tabindex="-1">Who should we expect?</h3>
+          <p class="bstep__lede">This is everything the front desk needs. Fields marked optional can be left blank.</p>
+
+          <fieldset class="segmented" data-whofor>
+            <legend>Who is the trial for?</legend>
+            <label><input type="radio" name="whofor" value="child"><span>My child</span></label>
+            <label><input type="radio" name="whofor" value="self"><span>Me</span></label>
+          </fieldset>
+
+          <div class="fieldgrid">
+            <div class="field">
+              <label for="f-sfirst" data-label-sfirst>Student’s first name</label>
+              <input id="f-sfirst" name="studentFirst" type="text" autocomplete="off" required>
+              <p class="err" data-err="studentFirst" hidden></p>
+            </div>
+            <div class="field">
+              <label for="f-slast" data-label-slast>Student’s last name</label>
+              <input id="f-slast" name="studentLast" type="text" autocomplete="off" required>
+              <p class="err" data-err="studentLast" hidden></p>
+            </div>
+            <div class="field field--full">
+              <label for="f-dob" data-label-dob>Student’s date of birth</label>
+              <input id="f-dob" name="dob" type="date" required>
+              <p class="err" data-err="dob" hidden></p>
+              <div class="agecheck" data-agecheck hidden></div>
+            </div>
+          </div>
+
+          <div class="fieldgrid" data-guardian>
+            <h4 class="fieldgrid__title">Parent or guardian</h4>
+            <div class="field">
+              <label for="f-gfirst">Your first name</label>
+              <input id="f-gfirst" name="guardianFirst" type="text" autocomplete="given-name">
+              <p class="err" data-err="guardianFirst" hidden></p>
+            </div>
+            <div class="field">
+              <label for="f-glast">Your last name</label>
+              <input id="f-glast" name="guardianLast" type="text" autocomplete="family-name">
+              <p class="err" data-err="guardianLast" hidden></p>
+            </div>
+          </div>
+
+          <div class="fieldgrid">
+            <div class="field">
+              <label for="f-email">Email</label>
+              <input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" required aria-describedby="f-email-hint">
+              <p class="hint" id="f-email-hint">Your confirmation and class reminders go here.</p>
+              <p class="err" data-err="email" hidden></p>
+            </div>
+            <div class="field">
+              <label for="f-phone">Mobile phone</label>
+              <input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required aria-describedby="f-phone-hint">
+              <p class="hint" id="f-phone-hint">Only used if a class changes or is canceled.</p>
+              <p class="err" data-err="phone" hidden></p>
+            </div>
+          </div>
+
+          <div class="fieldgrid">
+            <h4 class="fieldgrid__title">Emergency contact</h4>
+            <label class="check field--full" data-emsame-wrap>
+              <input type="checkbox" name="emergencySame" checked>
+              <span>I’m the emergency contact</span>
+            </label>
+            <div class="field" data-emergency hidden>
+              <label for="f-ename">Emergency contact name</label>
+              <input id="f-ename" name="emergencyName" type="text" autocomplete="off">
+              <p class="err" data-err="emergencyName" hidden></p>
+            </div>
+            <div class="field" data-emergency hidden>
+              <label for="f-ephone">Emergency contact phone</label>
+              <input id="f-ephone" name="emergencyPhone" type="tel" inputmode="tel" autocomplete="off">
+              <p class="err" data-err="emergencyPhone" hidden></p>
+            </div>
+          </div>
+
+          <div class="fieldgrid">
+            <div class="field field--full">
+              <label for="f-notes">Allergies, medications or anything else we should know <span class="opt">optional</span></label>
+              <textarea id="f-notes" name="notes" rows="2"></textarea>
+            </div>
+            <div class="field field--full">
+              <label for="f-source">How did you hear about us? <span class="opt">optional</span></label>
+              <select id="f-source" name="source"><option value="">Choose one</option></select>
+            </div>
+          </div>
+        </section>
+
+        <!-- Step 4 -->
+        <section class="bstep" data-step="4" aria-labelledby="bs4-h" hidden>
+          <h3 id="bs4-h" tabindex="-1">Check the details and pay</h3>
+          <dl class="review" data-review></dl>
+
+          <label class="check check--waiver">
+            <input type="checkbox" name="waiver">
+            <span>I’ve read and agree to the <button type="button" class="linkbtn" data-waiver-toggle aria-expanded="false" aria-controls="waiver-text">liability waiver</button>.</span>
+          </label>
+          <div class="waiver" id="waiver-text" hidden>
+            <p>Karate is a physical activity and, as with any sport, taking part carries a risk of injury. A black belt instructor supervises every class and protective gear is required for sparring. By signing up you accept those risks for the student named above.</p>
+            <p class="waiver__proto">Prototype text. The dojo’s actual waiver and agreement are signed in Zen Planner.</p>
+          </div>
+          <p class="err" data-err="waiver" role="alert" hidden>Tick the box to agree to the waiver before paying.</p>
+
+          <div class="payframe" aria-label="Payment form">
+            <div class="payframe__head">
+              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M7 10V7a5 5 0 0 1 10 0v3h1a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1v-9a1 1 0 0 1 1-1zm2 0h6V7a3 3 0 0 0-6 0z" fill="currentColor"/></svg>
+              <span>Secure card payment by Zen Planner</span>
+            </div>
+            <div class="payframe__fields" aria-hidden="true">
+              <span class="ghost ghost--wide">Card number</span>
+              <span class="ghost">Expiry</span>
+              <span class="ghost">Security code</span>
+              <span class="ghost">ZIP code</span>
+            </div>
+            <p class="payframe__note">Prototype: Zen Planner’s card form loads here. No card is needed and nothing is charged.</p>
+          </div>
+          <p class="bstep__alt">Want the real thing? <a href="https://emeraldcitykarate.sites.zenplanner.com/sign-up-now.cfm" data-zen-link target="_blank" rel="noopener">Open this trial in Zen Planner</a>.</p>
+        </section>
+
+        <!-- Done -->
+        <section class="bstep bstep--done" data-step="5" aria-labelledby="bs5-h" hidden>
+          <p class="notice notice--demo"><strong>This is a demo.</strong> Nothing was sent to the dojo, no place is reserved and no email will arrive. To sign up for real, <a href="https://emeraldcitykarate.sites.zenplanner.com/sign-up-now.cfm" data-zen-link target="_blank" rel="noopener">open this trial in Zen Planner</a>.</p>
+          <h3 id="bs5-h" tabindex="-1" data-done-title>You’re in.</h3>
+          <p class="bstep__lede" data-done-lede></p>
+          <div class="ticket" data-ticket></div>
+          <div class="done__actions">
+            <button type="button" class="btn btn--gold" data-ics>Add to calendar</button>
+            <a class="btn btn--line" data-reserve-link href="https://emeraldcitykarate.sites.zenplanner.com/calendar.cfm" target="_blank" rel="noopener">Reserve more classes</a>
+          </div>
+          <h4>Before the first class</h4>
+          <ul class="ticks ticks--tight">
+            <li>Arrive 5 to 10 minutes early to collect the T-shirt and white belt.</li>
+            <li>Wear sweats or anything comfortable. Shoes come off before the mat.</li>
+            <li><a href="index.html#count" data-close-to="#count">Practice counting to ten in Japanese.</a></li>
+          </ul>
+          <button type="button" class="linkbtn done__another" data-another>Add another family member</button>
+        </section>
+      </div>
+
+      <footer class="booking__foot" data-booking-foot>
+        <button type="button" class="btn btn--line" data-go-back>Back</button>
+        <p class="booking__sum" data-summary aria-live="polite"></p>
+        <button type="button" class="btn btn--gold" data-go-next>Continue</button>
+      </footer>
+    </form>
+  </dialog>
